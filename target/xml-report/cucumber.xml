@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="1" tests="1" time="1.015">
-<testcase classname="Signal Telecom" name="TC01_user want to go signal telecom" time="0.222">
-<skipped><![CDATA[Given user go to "http://www.signal-telecom.com/"...........................undefined
-]]></skipped>
-</testcase>
-</testsuite>
