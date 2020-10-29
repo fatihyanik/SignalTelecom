@@ -1,6 +1,7 @@
 package stepdefinitions;
 
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -9,6 +10,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -34,17 +36,25 @@ public class ProductsHighToLowOrderInShop {
 
     @Then("verify the product list in high to low order")
     public void verify_the_product_list_in_high_to_low_order() {
-        List<Integer> intList = new ArrayList<>();
-        for(WebElement w : shopPage.products){
-            Integer el = Integer.valueOf( w.getText().substring(1));
-            intList.add(el);
-        }
-//        intList.remove(0);
-//        for(int i=0;i<intList.size();i=i+2){
-//            intList.remove(i);
-//        }
+        List<Integer> intListAll = new ArrayList<>();
+        List<Integer> intListReal = new ArrayList<>();
+        List<Integer> intListRealOrdered = new ArrayList<>();
 
-        System.out.println(intList);
+        String strEl;
+        Integer el;
+
+        for(WebElement w : shopPage.products){
+            strEl = w.getText().substring(1,w.getText().length()-3).replace(",","");
+            el = Integer.valueOf( strEl);
+            intListAll.add(el);
+        }
+
+        for(int i=2;i<intListAll.size();i=i+2){
+            intListReal.add(intListAll.get(i));
+            intListRealOrdered.add(intListAll.get(i));
+        }
+        Collections.sort(intListRealOrdered,Collections.reverseOrder());
+        Assert.assertEquals(intListReal,intListRealOrdered);
     }
 
 
