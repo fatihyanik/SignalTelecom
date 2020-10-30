@@ -11,7 +11,7 @@ public class EbayTestPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id = "image_419897064")
+    @FindBy(xpath = "//div[@class='img-inner dark']")
     public WebElement ebayImageButton;
 
     @FindBy(id="gh-ac")
@@ -20,14 +20,20 @@ public class EbayTestPage {
     @FindBy(id="gh-btn")
     public WebElement ebaySearchButton;
 
-    @FindBy(xpath = "//h1[@class='str-billboard__title']")
+    @FindBy(xpath = "//html/head/title")
     public WebElement newWindow;
 
     @FindBy(xpath = "//a[@class='vip']")
     public WebElement titleOfProduct;
 
+//    @FindBy(xpath = "(//h3[@class='s-item__title'])[6]")
+//    public WebElement titleOfProduct;
+
     @FindBy(xpath="//li[@class='lvprice prc']")
     public WebElement priceOfProduct;
+//
+//    @FindBy(xpath = "(//span[@class='s-item__price'])[6]")
+//    public WebElement priceOfProduct;
 
 
 

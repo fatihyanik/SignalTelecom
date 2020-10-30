@@ -1,9 +1,14 @@
 package stepdefinitions;
 
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.EbayTestPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -13,10 +18,11 @@ import java.util.Set;
 public class EbayTestStepDefinition {
 
     EbayTestPage ebayTestPage = new EbayTestPage();
+    WebDriverWait wait=new WebDriverWait(Driver.getDriver(),10);
 
     @Given("User is signal-telecom homepage")
     public void user_is_signal_telecom_homepage() {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        Driver.getDriver().get(ConfigReader.getProperty("signal_telecom_url"));
       //  Driver.getDriver().get(ConfigReader.getProperty("global_trader_url"));
     }
 
@@ -24,15 +30,14 @@ public class EbayTestStepDefinition {
     public void the_user_click_on_the_button_of_eBay_Page() throws InterruptedException {
         Actions options = new Actions(Driver.getDriver());
         options.sendKeys(Keys.PAGE_DOWN).perform();
+        options.sendKeys(Keys.PAGE_DOWN).perform();
+        options.sendKeys(Keys.PAGE_DOWN).perform();
         Thread.sleep(2000);
         ebayTestPage.ebayImageButton.click();
     }
 
     @Given("the user selects the newly opened Signal Telecom's eBay Page")
-    public void the_user_selects_the_newly_opened_Signal_Telecom_s_eBay_Page() {
-        String newWindowText = ebayTestPage.newWindow.getText();
-        String expectedNewWindowText = Driver.getDriver().getTitle();
-        Assert.assertEquals(newWindowText, expectedNewWindowText);
+    public void the_user_selects_the_newly_opened_Signal_Telecom_s_eBay_Page() throws InterruptedException {
 
         String windowSignalTelecom=Driver.getDriver().getWindowHandle();
         Set<String> allWindowsHandle = Driver.getDriver().getWindowHandles();
@@ -42,6 +47,7 @@ public class EbayTestStepDefinition {
                 Driver.getDriver().switchTo().window(eachWindow);
             }
         }
+        Thread.sleep(2000);
 
     }
 
@@ -54,6 +60,8 @@ public class EbayTestStepDefinition {
 
     @Then("verify  the product is same")
     public void verify_the_product_is_same() {
+
+       // WebElement findProduct=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//h3[@class='s-item__title'])[6]")));
         Assert.assertTrue(ebayTestPage.titleOfProduct.getText().contains("GRANDSTREAM GXW4104"));
 
     }
