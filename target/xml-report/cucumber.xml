@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="20.525">
+<testcase classname="US1005_price_of_product_ebay_test" name="Verify in eBay website whether the price of product is &quot;$190.00&quot;" time="19.963">
+<system-out><![CDATA[Given User is signal-telecom homepage.......................................passed
+And the user click on the button of eBay Page...............................passed
+And the user selects the newly opened Signal Telecom's eBay Page............passed
+And the user search in eBay Store for "GRANDSTREAM GXW4104".................passed
+Then verify  the product is same............................................passed
+Then verify whether the price of product is "$190.00".......................passed
+]]></system-out>
+</testcase>
+</testsuite>
