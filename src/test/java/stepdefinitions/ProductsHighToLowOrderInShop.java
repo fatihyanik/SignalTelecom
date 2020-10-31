@@ -53,6 +53,7 @@ public class ProductsHighToLowOrderInShop {
             intListReal.add(intListAll.get(i));
             intListRealOrdered.add(intListAll.get(i));
         }
+        //comment
         Collections.sort(intListRealOrdered,Collections.reverseOrder());
         Assert.assertEquals(intListReal,intListRealOrdered);
     }
