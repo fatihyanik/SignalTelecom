@@ -53,7 +53,8 @@ public class ProductsHighToLowOrderInShop {
             intListReal.add(intListAll.get(i));
             intListRealOrdered.add(intListAll.get(i));
         }
-        //comment
+
+        //This line sort the list in descending order by using Collection class
         Collections.sort(intListRealOrdered,Collections.reverseOrder());
         Assert.assertEquals(intListReal,intListRealOrdered);
     }
