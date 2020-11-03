@@ -33,7 +33,7 @@ public class EbayTestPage {
     public WebElement priceOfProduct;
 //
 //    @FindBy(xpath = "(//span[@class='s-item__price'])[6]")
-//    public WebElement priceOfProduct;
+//    public WebElement priceOfProduct; new
 
 
 
