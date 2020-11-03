@@ -65,7 +65,7 @@ public class EbayTestStepDefinition {
         Assert.assertTrue(ebayTestPage.titleOfProduct.getText().contains("GRANDSTREAM GXW4104"));
 
     }
-
+        //Assert for product
     @Then("verify whether the price of product is {string}")
     public void verify_whether_the_price_of_product_is_$190(String price) {
         Assert.assertEquals(ebayTestPage.priceOfProduct.getText(), price);
