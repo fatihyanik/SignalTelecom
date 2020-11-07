@@ -1,5 +1,5 @@
 @ebay
-Feature: US1005_price_of_product_ebay_test
+Feature: US_005_price_of_product_ebay_test
   Scenario: Verify in eBay website whether the price of product is "$190.00"
     Given User is signal-telecom homepage
     And the user click on the button of eBay Page

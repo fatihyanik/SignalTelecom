@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="84.005">
+<testcase classname="US_015_verify_all_banners_are_accessible_without_click" name="TC_01 User wait all banners and click the LEARN MORE button" time="83.421">
+<failure message="expected:&lt;[TURKNEY TECHNOLOGY CONSULTING]&gt; but was:&lt;[Oops! That page can’t be found.]&gt;" type="org.junit.ComparisonFailure"><![CDATA[Given User is signal-telecom homepage.......................................passed
+When the user click on LEARN MORE button on 2th banner......................passed
+Then verify the pages that open match the 2th banner........................passed
+And the user back to first page.............................................passed
+When the user click on LEARN MORE button on 3th banner......................passed
+Then verify the pages that open match the 3th banner........................passed
+And the user back to first page.............................................passed
+When the user click on LEARN MORE button on 4th banner......................passed
+Then verify the pages that open match the 4th banner........................passed
+And the user back to first page.............................................passed
+When the user click on LEARN MORE button on 5th banner......................passed
+Then verify the pages that open match the 5th banner........................failed
+
+StackTrace:
+org.junit.ComparisonFailure: expected:<[TURKNEY TECHNOLOGY CONSULTING]> but was:<[Oops! That page can’t be found.]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at stepdefinitions.BannersStepDefinition.verify_the_pages_that_open_match_the_5th_banner(BannersStepDefinition.java:80)
+	at ✽.verify the pages that open match the 5th banner(file:///C:/Users/yavuz/IdeaProjects/SignalTelecom/src/test/resources/features/US_016_verify_all_banners_are_accessible_without_click.feature:21)
+]]></failure>
+</testcase>
+</testsuite>
